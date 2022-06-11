@@ -15,3 +15,17 @@ public static void plusMinus(List<Integer> arr) {
     System.out.println(negative/n);
     System.out.println(zero/n);
 }
+
+// Given an array of integers where all but one integer appears twice, find the unique integer.
+public static int lonelyinteger(List<Integer> a) {
+    Set<Integer> uniqueNumbers = new HashSet<Integer>(a);
+    int uniqueSum = 0, doubledSum = 0, sum = 0;
+    for (Integer number: uniqueNumbers) {
+        uniqueSum += number;
+    }
+    doubledSum = uniqueSum * 2;
+    for (int i = 0; i < a.size(); i++) {
+        sum += a.get(i);
+    }
+    return doubledSum - sum;
+}
