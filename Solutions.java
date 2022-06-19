@@ -40,3 +40,13 @@ public static int diagonalDifference(List<List<Integer>> arr) {
     }
     return Math.abs(rightDiagonal - leftDiagonal);
 }
+
+// You are given a ist of integers. Create and return an array whose index range covers all the values in the input list. Each time a value occurs in the input list, increment the counter at that specific index in the new list.
+public static List<Integer> countingSort(List<Integer> arr) {
+    ArrayList<Integer> freqArray = new ArrayList<Integer>(Arrays.asList(new Integer[100]));
+    Collections.fill(freqArray, 0);
+    for (int value: arr) {
+        freqArray.set(value, freqArray.get(value) + 1);
+    }
+    return freqArray;
+}
