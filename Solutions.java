@@ -50,3 +50,17 @@ public static List<Integer> countingSort(List<Integer> arr) {
     }
     return freqArray;
 }
+
+// Convert time given in 12-hour AM/OM format to (military) 24-hour format.
+public static String timeConversion(String s) {
+    String result;
+    String hour = s.substring(0, 2);
+    String minutesAndSeconds = s.substring(2,8);
+    String amOrPm = s.substring(8);
+    if (amOrPm.equals("PM")) {
+        result = hour.equals("12") ? (hour + minutesAndSeconds) : (12 + Integer.parseInt(hour)) + minutesAndSeconds;
+    } else {
+        result = hour.equals("12") ? "00" + minutesAndSeconds : (hour + minutesAndSeconds);
+    }
+    return result;
+}
